@@ -1,6 +1,6 @@
 FROM python:3
 RUN mkdir /build
-RUN echo Hello S3 Yra 456 >/build/shud.txt
+RUN echo Shud >/build/shud.txt
 WORKDIR /usr/src/app/test
 RUN mv /build ./build
 RUN python --version
