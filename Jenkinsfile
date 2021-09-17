@@ -16,6 +16,9 @@ pipeline {
             steps {
             withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'accessKeyVariable'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'secretKeyVariable')]) {
                 sh '''
+                export AWS_ACCESS_KEY_ID=$accessKeyVariable
+                export AWS_SECRET_ACCESS_KEY=$secretKeyVariable
+                export AWS_DEFAULT_REGION=eu-central-1
                 aws configure set aws_access_key_id  $accessKeyVariable
                 aws configure set aws_secret_access_key  $secretKeyVariable
                 aws configure set default.region  eu-central-1
