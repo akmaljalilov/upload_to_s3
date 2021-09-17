@@ -6,7 +6,8 @@ pipeline {
             steps {
                 script {
                      def customImage = docker.build('test', "-f Dockerfile ./ ")
-                     customImage.inside('-u root ') {
+                     sh 'mkdir build'
+                     customImage.inside('-u root -v build:build') {
                         sh 'ls '
                      }
                 }
