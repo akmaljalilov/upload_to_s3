@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     sh "bash docker_build.sh"
-                    sh 'cat /usr/src/app/test/build/Yes/yra.txt'
+                    sh 'cat Yes/yra.txt'
                 }
             }
         }
