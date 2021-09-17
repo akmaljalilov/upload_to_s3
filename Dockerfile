@@ -1,4 +1,4 @@
 FROM python:3
 RUN mkdir /build
-RUN echo hi >/build/hi.txt
+RUN echo Hello Docker >/build/hi.txt
 RUN python --version

@@ -8,7 +8,7 @@ pipeline {
                      def customImage = docker.build('test', "-f Dockerfile ./ ")
                      customImage.inside {
                         sh "cp /build/hi.txt ${WORKSPACE}"
-                        sh 'echo ls ${WORKSPACE}'
+                        sh 'cat ls ${WORKSPACE}/hi.txt'
                      }
                 }
             }
