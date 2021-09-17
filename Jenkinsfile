@@ -7,7 +7,7 @@ pipeline {
                 script {
                      def customImage = docker.build('test', "-f Dockerfile ./ ")
                      customImage.inside('-u root ') {
-                        sh 'ls '
+                        sh 'touch /build/hi.txt && ls'
                      }
                 }
             }
