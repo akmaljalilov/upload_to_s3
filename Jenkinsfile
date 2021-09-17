@@ -7,8 +7,8 @@ pipeline {
                 script {
                      def customImage = docker.build('test', "-f Dockerfile ./ ")
                      customImage.inside('-u root -v build:/build') {
-                     }
                         sh 'ls build'
+                     }
                 }
             }
         }
