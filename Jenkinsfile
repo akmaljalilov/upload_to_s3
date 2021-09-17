@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                      def customImage = docker.build('test', "-f Dockerfile ./ ")
-                     customImage.inside('-u root $WORKSPACE:/build') {
+                     customImage.inside('-u root build:/build') {
                         sh 'touch text.txt && ls'
                      }
                 }
