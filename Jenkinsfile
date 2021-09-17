@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     sh "bash docker_build.sh"
-                    sh 'cat hi.txt'
+                    sh 'cat dist/hi.txt'
                 }
             }
         }
