@@ -14,8 +14,12 @@ pipeline {
         }
         stage('Upload file to s3') {
             steps {
-            withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'test')]) {
-                sh 'echo $test'
+            withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'accessKeyVariable'), tring(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'secretKeyVariable')]) {
+                sh '''
+                aws configure set aws_access_key_id  $accessKeyVariable
+                aws configure set aws_secret_access_key  $secretKeyVariable
+                aws s3 ls
+                '''
             }
 //                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '6491ee5d-f25f-4cc1-b5e9-49139402f6dd', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
 //                     sh 'cat ${WORKSPACE}/hi.txt'
