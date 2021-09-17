@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 docker build -t test .
-docker run -t -d test --name my-test
+docker run --name my-test-new -d -t test
 
-docker cp my-test:/build/hi.txt ./
+docker cp my-test-new:/build/hi.txt ./
