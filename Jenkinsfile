@@ -5,8 +5,10 @@ pipeline {
         stage('Build MLNCS') {
             steps {
                 script {
-                     docker.build('test', "-f Dockerfile ./ ")
-                     sh 'aws s3 ls'
+                     def customImage = docker.build('test', "-f Dockerfile ./ ")
+                     customImage.inside('-u root ') {
+                        sh 'ls '
+                     }
                 }
             }
         }
