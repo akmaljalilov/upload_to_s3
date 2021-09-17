@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Upload file to s3') {
             steps {
-            withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'accessKeyVariable'), tring(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'secretKeyVariable')]) {
+            withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'accessKeyVariable'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'secretKeyVariable')]) {
                 sh '''
                 aws configure set aws_access_key_id  $accessKeyVariable
                 aws configure set aws_secret_access_key  $secretKeyVariable
