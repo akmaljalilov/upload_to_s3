@@ -5,10 +5,10 @@ pipeline {
         stage('Build MLNCS') {
             steps {
                 script {
-                    sh 'echo ${WORKSPACE}'
                      def customImage = docker.build('test', "-f Dockerfile ./ ")
                      customImage.inside {
                         sh "cp /build/hi.txt ${WORKSPACE}"
+                        sh 'echo ls ${WORKSPACE}'
                      }
                 }
             }
