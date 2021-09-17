@@ -16,9 +16,6 @@ pipeline {
             steps {
             withCredentials([string(credentialsId: 'AWS_ACCESS_KEY_ID', variable: 'accessKeyVariable'), string(credentialsId: 'AWS_SECRET_ACCESS_KEY', variable: 'secretKeyVariable')]) {
                 sh '''
-//                 export AWS_ACCESS_KEY_ID=$accessKeyVariable
-//                 export AWS_SECRET_ACCESS_KEY=$secretKeyVariable
-//                 export AWS_DEFAULT_REGION=eu-central-1
                 aws s3 ls
                 '''
             }
