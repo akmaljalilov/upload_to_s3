@@ -18,6 +18,7 @@ pipeline {
                 sh '''
                 aws configure set aws_access_key_id  $accessKeyVariable
                 aws configure set aws_secret_access_key  $secretKeyVariable
+                aws configure set default.region  eu-central-1
                 aws s3 ls
                 '''
             }
