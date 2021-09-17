@@ -10,10 +10,5 @@ pipeline {
             }
         }
 }
-    post {
-        success {
-            sh 'yes'
-        }
 
-    }
 }
