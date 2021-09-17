@@ -1,2 +1,2 @@
 FROM python:3
-RUN print('Hello')
+RUN python print('Hello')
