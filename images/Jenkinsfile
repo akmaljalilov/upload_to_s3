@@ -1,15 +1,17 @@
 pipeline {
     agent any
-    parameters([
-        choice(
-            name: 'BUILD_IMAGE',
-            choices: ['flutter'],
-            description: 'Select image for build' ),
-        string(
-            defaultValue: '2.5.2',
-            name: 'Flutter-version'
-        )
-      ])
+    properties([
+        parameters([
+            choice(
+                name: 'BUILD_IMAGE',
+                choices: ['flutter'],
+                description: 'Select image for build' ),
+            string(
+                defaultValue: '2.5.2',
+                name: 'Flutter-version'
+            )
+        ])
+    ])
     stages {
                 stage('Build docker') {
                      steps {
