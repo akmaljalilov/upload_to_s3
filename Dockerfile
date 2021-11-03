@@ -5,7 +5,7 @@ COPY . /go/src/velox/upload_to_s3
 WORKDIR /go/src/velox/upload_to_s3
 RUN go mod download all
 RUN go install github.com/swaggo/swag/cmd/swag@v1.7.2
-RUN swag init --parseDependency --parseInternal -g mln.go
+RUN swag init
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo .
 
 FROM alpine:latest
