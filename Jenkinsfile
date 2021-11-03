@@ -4,7 +4,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                  script {
-                      sh "bash docker build -t test ."
+                      sh "docker build -t test ."
                  }
             }
         }
