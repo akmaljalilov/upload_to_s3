@@ -25,7 +25,7 @@ whoami
 
 echo "Building and Pushing docker image"
 echo $DOCKER_BUILD
-docker build  .
+docker build -t $DOCKER_BUILD  .
 #docker push $DOCKER_BUILD
 
 #echo "Building and Pushing docker latest"
@@ -34,5 +34,5 @@ docker build  .
 #docker push $DOCKER_LATEST
 
 echo "Cleaning local images"
-docker rmi $PROJECT_NAME
+docker rmi $DOCKER_BUILD
 #docker rmi $DOCKER_LATEST
