@@ -25,7 +25,7 @@ whoami
 
 echo "Building and Pushing docker image"
 echo $DOCKER_BUILD
-docker build -t $DOCKER_BUILD -f $DOCKERFILE_LOC --build-arg FLUTTER_TAG=$FLUTTER_TAG .
+docker build -t $DOCKER_BUILD -f $DOCKERFILE_LOC  .
 #docker push $DOCKER_BUILD
 
 #echo "Building and Pushing docker latest"

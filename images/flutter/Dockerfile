@@ -1,6 +1,6 @@
 FROM openjdk:8
-ARG FLUTTER_TAG
-RUN echo $FLUTTER_TAG
+RUN python3 main.py
+#RUN echo $ARTIFACTORY_HOST
 #RUN apt update
 #RUN apt install -y git curl unzip lib32stdc++6
 #RUN useradd -ms /bin/bash user
