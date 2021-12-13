@@ -25,7 +25,7 @@ whoami
 
 echo "Building and Pushing docker image"
 echo $DOCKER_BUILD
-docker build -t $DOCKER_BUILD  .
+docker build -t $DOCKER_BUILD -f images/Dockerfile  .
 #docker push $DOCKER_BUILD
 
 #echo "Building and Pushing docker latest"
