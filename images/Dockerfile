@@ -1,6 +1,6 @@
 FROM openjdk:8
-RUN ls
 COPY main.py main.py
+RUN ls
 RUN python3 main.py
 #RUN echo $ARTIFACTORY_HOST
 #RUN apt update
