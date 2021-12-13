@@ -1,5 +1,5 @@
 FROM openjdk:8
-COPY main.py main.py
+COPY images/main.py main.py
 RUN ls
 RUN python3 main.py
 #RUN echo $ARTIFACTORY_HOST
