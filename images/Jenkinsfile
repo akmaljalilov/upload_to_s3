@@ -1,15 +1,6 @@
 pipeline {
     agent any
-    parameters {
-        choice(
-            name: 'BUILD_IMAGE',
-            choices: ['flutter'],
-            description: 'Select image for build' )
-        string(
-            defaultValue: '2.5.2',
-            name: 'FLUTTER_TAG'
-        )
-    }
+
     stages {
                 stage('Build docker') {
                 environment {
@@ -17,7 +8,7 @@ pipeline {
                                         }
                      steps {
                        script {
-                            sh "bash images/docker_build.sh 1.0.${env.BUILD_NUMBER} $BUILD_IMAGE/Dockerfile $BUILD_IMAGE $FLUTTER_TAG "
+                            sh "bash images/docker_build.sh 1.0.${env.BUILD_NUMBER} "
                        }
                     }
                 }
